@@ -10,6 +10,8 @@ echo "Stop rabbitmq"
 rabbitmqctl stop
 echo "Set cookie"
 cp /vagrant/.erlang.cookie /var/lib/rabbitmq/.erlang.cookie
+echo "Enable management plugin"
+/usr/lib/rabbitmq/bin/rabbitmq-plugins enable rabbitmq_management
 echo "Restart rabbitmq"
 /etc/init.d/rabbitmq-server start
 echo "Fin"
